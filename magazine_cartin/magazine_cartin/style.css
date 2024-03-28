@@ -1,0 +1,270 @@
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+  }
+  body {
+    font-family: 'Cambria', sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #9ACD32;
+    color: #fff;
+    padding: 10px 0;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+a{
+    color: rgb(58, 58, 58);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: 'Arial', sans-serif;
+}
+
+a:hover{
+    color: #000;
+}
+
+.logo {
+    font-family: 'Arial', sans-serif; 
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+.top-nav {
+  background-color: #9ACD32;
+  color: black;
+  padding: 10px 0;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    animation: slideIn 1s forwards;
+  
+  }
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  z-index: 999;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #000;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+  }
+  .menu {
+    position: absolute;
+    top: 1%;
+    margin-top: 50px;
+    left: 4%;
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #a4a3a3;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: black;
+    background-color: #fff;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+  .buy-button{
+    margin-right: 0.rem;
+  }
+}
+
+
+  
+  /* Кнопка 'Купити' */
+  .buy-button {
+    margin-top: 5px;
+    margin-left: 15%;
+    background-color: #f9f9f9;
+    color: #333;
+    border: 3px solid #333;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .buy-button:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Головний контент */
+  main {
+    padding: 20px;
+  }
+  
+  /* Стаття */
+  article {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  
+  /* Таблиця */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  /* Футер */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  
+  h4 {
+    padding: 30px;
+    color: #333;
+    font-size: 18px;
+  }
+  
+  h1, h2, h3 {
+    padding: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  p {
+    padding: 30px;
+    color: #333;
+  }
+  
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  a {
+    color: #333;
+    font-size: 16px;
+    margin-top: 10px;
+    text-decoration: none;
+    display: inline-block;
+    opacity: 0.7;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    opacity: 1;
+  }
+  

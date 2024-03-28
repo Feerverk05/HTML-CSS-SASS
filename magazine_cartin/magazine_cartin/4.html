@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Форма замовлення картини</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        color: #333;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 20px;
+        color: #333;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        align-self: flex-end;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+<h2>Замовлення картини</h2>
+<form action="#" method="POST">
+    <label for="name">Ім'я:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    
+    <label for="phone">Телефон:</label><br>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+    
+    <label for="painting-type">Розмір картини:</label><br>
+    <select id="painting-type" name="painting-type" required>
+        <option value="landscape">40х60</option>
+        <option value="portrait">50х60</option>
+        <option value="abstract">60х80</option>
+        <option value="still-life">80х100</option>
+    </select><br><br>
+    
+    <label>Вид картини:</label><br>
+    <input type="radio" id="size-small" name="size" value="small" required>
+    <label for="size-small">Хіт продажу</label><br>
+    <input type="radio" id="size-medium" name="size" value="medium">
+    <label for="size-medium">Пейзаж</label><br>
+    <input type="radio" id="size-large" name="size" value="large">
+    <label for="size-large">Патріотичні</label><br><br>
+    
+    <label>Термін виконання:</label><br>
+    <input type="checkbox" id="deadline-urgent" name="deadline" value="urgent">
+    <label for="deadline-urgent">Терміново(3 дні)</label><br>
+    <input type="checkbox" id="deadline-normal" name="deadline" value="normal">
+    <label for="deadline-normal">Звичайний(10 днів)</label><br><br>
+    
+    <label for="additional-info">Додаткова інформація:</label><br>
+    <textarea id="additional-info" name="additional-info"></textarea><br><br>
+    
+    <label for="payment-method">Спосіб оплати:</label><br>
+    <select id="payment-method" name="payment-method" required>
+        <option value="credit-card">Кредитна карта</option>
+        <option value="bank-transfer">Банківський переказ</option>
+        <option value="paypal">PayPal</option>
+    </select><br><br>
+    
+    <input type="submit" value="Відправити">
+</form>
+</body>
+</html>

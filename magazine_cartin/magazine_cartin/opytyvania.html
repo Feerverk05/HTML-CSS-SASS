@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Опитування</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+
+        fieldset {
+            padding: 20px;
+            border: none;
+        }
+
+        legend {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="datetime-local"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form id="artForm">
+        <fieldset> 
+            <legend>Хелп у виборі картини</legend>
+    
+            <label for="pictureType">1. Яку картину ви шукаєте?</label>
+            <input type="text" id="pictureType" name="pictureType">
+    
+            <label for="style">2. Вкажіть бажаний стиль картини:</label><br>
+            <select id="style" name="style">
+                <option value="абстракція">Абстракція</option>
+                <option value="пейзаж">Пейзаж</option>
+                <option value="портрет">Портрет</option>
+            </select><br><br>
+    
+            <label>3. Оберіть тематику картини:</label>
+            <input type="checkbox" id="priroda" name="priroda" value="priroda">Природа<br>
+            <input type="checkbox" id="town" name="town" value="town"> Місто <br>
+            <input type="checkbox" id="abstraction" name="abstraction" value="abstraction">Абстракція<br><br>
+            
+            <label>4. Яким ви бажаєте бачити розмір картини?</label>
+            <input type="radio" id="interest1" name="interest" value="1">40х60<br>
+            <input type="radio" id="interest2" name="interest" value="2">50х60<br>
+            <input type="radio" id="interest3" name="interest" value="3">60х80<br>
+            <input type="radio" id="interest4" name="interest" value="4">80х100<br><br>
+            
+            
+            <label>5. Які умови доставки вам підходять?</label>
+            <input type="checkbox" id="standard" name="delivery" value="standard">Стандартна доставка<br>
+            <input type="checkbox" id="express" name="delivery" value="express"> Експрес-доставка<br><br>
+            
+    
+            <label for="canvas-color">6. Оберіть колір холста:</label>
+            <input type="color" id="canvas-color" name="canvas-color" list="color-options">
+            <datalist id="color-options">
+                <option>#000000</option>
+                <option>#ffffff</option>
+                <option>#0000ff</option>
+                <option>#ffff00</option>
+                <option>#ff7f50</option>
+            </datalist><br><br>
+    
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Телефон:</label>
+            <input type="number" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+    
+            <label for="volume">На скільки Вам терміново треба вирішити це питання?</label>
+            <input type="range" id="volume" name="volume" min="0" max="10" step="1">
+          
+            <label for="time">Оберіть зручний час для нашого дзвіночку:</label>
+            <input type="datetime-local" id="time" name="time">
+    
+            <br><br>
+
+            <input type="submit" id="submitBtn" value="Надіслати">
+
+            <div id="results"></div>
+            <button id="filter-button">Фільтрувати результати</button>
+
+        </fieldset>
+    </form>
+</body>
+</html>

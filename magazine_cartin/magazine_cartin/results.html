@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Результати фільтрації</title>
+</head>
+<body>
+    <h1>Результати фільтрації</h1>
+    <div id="results"></div>
+
+    <script>
+        let surveys = JSON.parse(localStorage.getItem('surveys')) || [];
+        let resultsDiv = document.getElementById('results');
+
+        // Фільтр 1: Вивести всі опитування, де стиль = 'пейзаж'
+        let filter1 = surveys.filter(function(survey) {
+            return survey.style === 'пейзаж';
+        });
+
+        // Фільтр 2: Вивести всі опитування, де обрано доставку 'експрес'
+        let filter2 = surveys.filter(function(survey) {
+            return survey.delivery === 'express';
+        });
+
+        // Фільтр 3: Вивести всі опитування, де тематика = 'природа' і розмір = '60х80'
+        let filter3 = surveys.filter(function(survey) {
+            return survey.priroda && survey.interest === '3';
+        });
+
+        // Вивід результатів
+        let ul = document.createElement('ul');
+        filter1.forEach(function(result) {
+            let li = document.createElement('li');
+            li.textContent = `Стиль: ${result.style}, Тематика: ${result.priroda}, Розмір: ${result.interest}`;
+            ul.appendChild(li);
+        });
+        resultsDiv.appendChild(ul);
+
+        ul = document.createElement('ul');
+        filter2.forEach(function(result) {
+            let li = document.createElement('li');
+            li.textContent = `Доставка: ${result.delivery}`;
+            ul.appendChild(li);
+        });
+        resultsDiv.appendChild(ul);
+
+        ul = document.createElement('ul');
+        filter3.forEach(function(result) {
+            let li = document.createElement('li');
+            li.textContent = `Тематика: ${result.priroda}, Розмір: ${result.interest}`;
+            ul.appendChild(li);
+        });
+        resultsDiv.appendChild(ul);
+    </script>
+</body>
+</html>
